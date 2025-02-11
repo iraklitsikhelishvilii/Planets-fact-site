@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer base{
+ :root{--tw-screen-sm: 640px;
+  --tw-screen-md: 640px;
+  --tw-screen-lg: 860px} 
+}
