@@ -7,7 +7,7 @@ function Main() {
     <>
       <div className=" max-w-[1100px] w-[100%] h-[100vh] flex items-center justify-center flex-col">
         <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between">
-          <img className="!ml-[170px]" src={planet_img} alt="" />
+          <img className="!ml-[170px] planet_img" src={planet_img} alt="" />
           <div>
             <h1 className="text-[80px] font-[400] text-[#fff]">mercury</h1>
             <p className=" text-[14px] font-[400] leading-[25px] text-[#fff] !mt-[23px]">
