@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 function Header() {
   const navigation = useNavigate();
   return (
-    <header className=" !py-[10px] flex items-center justify-between  !pl-[32px] !pr-[32px] w-full  border-b-[1px] border-solid border-[#fff]">
+    <header className=" !py-[10px] flex items-center justify-between  !px-[32px] w-full  border-b-[1px] border-solid border-[#fff] max-[860px]:flex-col max-[860px]:gap-[39px] max-[860px]:!py-[27px] max-[860px]:!px-[51px] ">
       <button
         onClick={() => {
           window.location.reload();
@@ -13,7 +13,7 @@ function Header() {
       >
         THE PLANETS
       </button>
-      <div className=" flex gap-[33px]">
+      <div className=" flex gap-[33px] max-[860px]:w-[100%] max-[860px]:justify-between">
         {Data.map((planet, key) => (
           <button
             onClick={() =>

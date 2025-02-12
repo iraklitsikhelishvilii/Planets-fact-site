@@ -1,92 +1,134 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow_img from "../../assets/images/external-link-square-with-an-arrow-in-right-diagonal.svg";
 import planet_img from "../../assets/images/1.svg";
+import Mercury_internal from "../../assets/images/planet-mercury-internal.svg";
+import Mercury_geology from "../../assets/images/geology-mercury.png";
 import { Link } from "react-router";
 function Main() {
+  const [mercuryimg, setmercuryimg] = useState(planet_img);
+  const PlanetClick = () => {
+    setmercuryimg(planet_img);
+    setvisible(false);
+  };
+  const InternalClick = () => {
+    setmercuryimg(Mercury_internal);
+    setvisible(false);
+  };
+  const [visible, setvisible] = useState(false);
+  const SetVisible = () => {
+    setmercuryimg(planet_img);
+    setvisible(true);
+  };
   return (
     <>
-      <div className=" max-w-[1100px] w-[100%] h-[100vh] flex items-center justify-center flex-col">
-        <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between">
-          <img className="!ml-[170px] planet_img" src={planet_img} alt="" />
-          <div>
-            <h1 className="text-[80px] font-[400] text-[#fff]">mercury</h1>
-            <p className=" text-[14px] font-[400] leading-[25px] text-[#fff] !mt-[23px]">
-              Mercury is the smallest planet in the Solar <br /> System and the
-              closest to the Sun. Its orbit <br /> around the Sun takes 87.97
-              Earth days, the <br /> shortest of all the Sun's planets. Mercury
-              is one <br /> of four terrestrial planets in the Solar System,{" "}
-              <br /> and is a rocky body like Earth.
-            </p>
-            <div className=" flex gap-[8px] !mt-[23px] ">
-              <p className=" text-[14px] font-[400] text-[#fff] opacity-[0.5] ">
-                Source :{" "}
-                <Link
-                  to="https://en.wikipedia.org/wiki/Mercury_(planet)"
-                  className=" cursor-pointer font-[700]"
-                >
-                  Wikipedia
-                </Link>
+      <div className=" max-w-[1100px] w-[100%]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px]">
+        <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between max-[860px]:flex-col">
+          <div className="  h-[550px] w-[490px] flex justify-center items-center max-[860px]:w-[300px] max-[860px]:h-[auto]">
+            <img
+              className=" max-[860px]:!ml-[0px] planet_img"
+              src={mercuryimg}
+              alt=""
+            />
+            {visible && (
+              <img
+                className=" w-[160px] h-[190px] absolute  bottom-[250px]"
+                src={Mercury_geology}
+                alt=""
+              />
+            )}
+          </div>
+          <div className="max-[860px]:flex max-[860px]:justify-between max-[860px]:w-[100%] max-[860px]:!px-[40px] max-[860px]:!mt-[79px]">
+            <div>
+              <h1 className="text-[80px] font-[400] text-[#fff] max-[860px]:text-[48px]">
+                mercury
+              </h1>
+              <p className=" text-[14px] font-[400] leading-[25px] text-[#fff] !mt-[23px]  max-[860px]:text-[11px]  max-[860px]:leading-[22px]">
+                Mercury is the smallest planet in the Solar <br /> System and
+                the closest to the Sun. Its orbit <br /> around the Sun takes
+                87.97 Earth days, the <br /> shortest of all the Sun's planets.
+                Mercury is one <br /> of four terrestrial planets in the Solar
+                System, <br /> and is a rocky body like Earth.
               </p>
-              <img src={arrow_img} alt="" />
+              <div className=" flex gap-[8px] !mt-[23px] ">
+                <p className=" text-[14px] font-[400] text-[#fff] opacity-[0.5]  max-[860px]:text-[12px] ">
+                  Source :{" "}
+                  <Link
+                    to="https://en.wikipedia.org/wiki/Mercury_(planet)"
+                    className=" cursor-pointer font-[700]"
+                  >
+                    Wikipedia
+                  </Link>
+                </p>
+                <img src={arrow_img} alt="" />
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px]">
-              <button className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]">
-                <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]">
+            <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px] max-[860px]:!mt-[56px]">
+              <button
+                onClick={PlanetClick}
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] "
+              >
+                <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]  max-[860px]:text-[9px]  max-[860px]:!ml-[20px]">
                   01
                 </p>
-                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px]">
+                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px]">
                   OVERVIEW
                 </p>
               </button>
-              <button className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#fff]">
-                <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]">
+              <button
+                onClick={InternalClick}
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
+              >
+                <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   02
                 </p>{" "}
-                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] ">
+                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px] ">
                   Internal Structure
                 </p>
               </button>
-              <button className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]">
-                <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]">
+              <button
+                onClick={SetVisible}
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
+              >
+                <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   03
                 </p>{" "}
-                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] ">
+                <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px] ">
                   Surface Geology
                 </p>
               </button>
             </div>
           </div>
         </div>
-        <div className="flex w-[100%] justify-between !mt-[80px] !mb-[10px]">
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px]">
-            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px]">
+        <div className="flex w-[100%] justify-between !mt-[80px] !mb-[10px] max-[860px]:!px-[40px] max-[860px]:!mt-[27px] max-[860px]:!mb-[27px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px]  max-[860px]:!pl-[15px]">
+            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               ROTATION TIME
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px]">
+            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
               58.6 days
             </p>
           </div>
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px]">
-            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               REVOLUTION TIME
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px]">
+            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
               87.97 days
             </p>
           </div>
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px]">
-            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               radius
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px]">
+            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
               2,439.7 km
             </p>
           </div>
-          <div className="flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px]">
-            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px]">
+          <div className="flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+            <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               AVERAGE TEMP.
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px]">
+            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
               430°c
             </p>
           </div>
