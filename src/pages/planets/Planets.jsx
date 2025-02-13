@@ -28,11 +28,9 @@ import Neptune_geology from "../../assets/images/geology-neptune.png";
 
 function Planets() {
   const location = useLocation();
-  console.log(location);
-
-  let hover_color;
 
   const [index, setindex] = useState(null);
+  let hover_color;
   if (location.state.name === "Mercury") {
     hover_color = "#419EBB";
   } else if (location.state.name === "Venus") {
@@ -160,9 +158,44 @@ function Planets() {
   };
   return (
     <>
-      <div className=" max-w-[1100px] w-[100%] h-[100vh] flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px]">
+      <div className=" flex border-b-[1px] border-b-solid border-b-[#fff] !py-[24px] w-full items-center justify-between !px-[24px] min-[710px]:hidden">
+        <button
+          onClick={PlanetClick}
+          style={{
+            backgroundColor: index === 1 ? hover_color : "",
+          }}
+          onMouseEnter={() => MouseEnter(1)}
+          onMouseLeave={MouseLeave}
+          className="  cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+        >
+          OVERVIEW
+        </button>
+        <button
+          style={{
+            backgroundColor: index === 2 ? hover_color : "",
+          }}
+          onMouseEnter={() => MouseEnter(2)}
+          onMouseLeave={MouseLeave}
+          onClick={InternalClick}
+          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+        >
+          Structure
+        </button>
+        <button
+          style={{
+            backgroundColor: index === 3 ? hover_color : "",
+          }}
+          onMouseEnter={() => MouseEnter(3)}
+          onMouseLeave={MouseLeave}
+          onClick={GeoVisible}
+          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+        >
+          Surface{" "}
+        </button>
+      </div>
+      <div className=" max-w-[1100px] w-[100%] h-[100vh] flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[64px]">
         <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between max-[860px]:flex-col">
-          <div className="  h-[550px] w-[490px] flex justify-center items-center max-[860px]:w-[300px] max-[860px]:h-[auto]">
+          <div className="  h-[550px] w-[490px] flex justify-center items-center max-[860px]:w-[300px] max-[860px]:h-[auto] max-[710px]:w-[200px]">
             <img
               className={` max-[860px]:!ml-[0px] ${
                 location.state.name === "Saturn" ? "" : "planet_img"
@@ -172,18 +205,18 @@ function Planets() {
             />
             {geologuvisible && (
               <img
-                className=" w-[160px] h-[190px] absolute  bottom-[250px]"
+                className=" w-[160px] h-[190px] absolute  bottom-[250px] max-[710px]:w-[110px] max-[710px]:h-[130px] max-[710px]:bottom-[400px]"
                 src={geology_img}
                 alt=""
               />
             )}
           </div>
-          <div className="max-[860px]:flex max-[860px]:justify-between max-[860px]:w-[100%] max-[860px]:!px-[40px] max-[860px]:!mt-[79px]">
-            <div>
-              <h1 className="text-[80px] font-[400] text-[#fff] max-[860px]:text-[48px]">
+          <div className="max-[860px]:flex max-[860px]:justify-between max-[860px]:w-[100%] max-[860px]:!px-[40px] max-[860px]:!mt-[79px]  max-[710px]:justify-center max-[710px]:!mt-[65px] ">
+            <div className=" flex flex-col  max-[710px]:items-center ">
+              <h1 className="text-[80px] font-[400] text-[#fff] max-[860px]:text-[48px] max-[710px]:text-[40px]">
                 {location.state.name}
               </h1>
-              <p className="w-[350px] text-[14px] font-[400] leading-[25px] text-[#fff] !mt-[23px]  max-[860px]:text-[11px]  max-[860px]:leading-[22px]  max-[860px]:w-[335px]">
+              <p className="w-[350px] text-[14px] font-[400] leading-[25px] text-[#fff] !mt-[23px]  max-[860px]:text-[11px]  max-[860px]:leading-[22px]  max-[860px]:w-[335px] max-[710px]:text-center">
                 {location.state.geology.content}
               </p>
               <div className=" flex gap-[8px] !mt-[23px] ">
@@ -199,7 +232,7 @@ function Planets() {
                 <img src={arrow_img} alt="" />
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px] max-[860px]:!mt-[56px]">
+            <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px] max-[860px]:!mt-[56px] max-[710px]:hidden ">
               <button
                 onClick={PlanetClick}
                 style={{
@@ -207,7 +240,7 @@ function Planets() {
                 }}
                 onMouseEnter={() => MouseEnter(1)}
                 onMouseLeave={MouseLeave}
-                className={`  cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]`}
+                className={`  cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] `}
               >
                 <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]  max-[860px]:text-[9px]  max-[860px]:!ml-[20px]">
                   01
@@ -251,36 +284,36 @@ function Planets() {
             </div>
           </div>
         </div>
-        <div className="flex w-[100%] justify-between !mt-[80px] !mb-[10px] max-[860px]:!px-[40px] max-[860px]:!mt-[27px] max-[860px]:!mb-[27px]">
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px]  max-[860px]:!pl-[15px]">
+        <div className=" gap-[8px]  flex w-[100%] justify-between !mt-[80px] !mb-[10px] max-[860px]:!px-[40px] max-[860px]:!mt-[27px] max-[860px]:!mb-[27px] max-[710px]:flex-col max-[710px]:w-[100%] max-[710px]:!px-[24px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px]  max-[860px]:!pl-[15px] max-[710px]:w-[100%] max-[710px]:h-[48px] max-[710px]:flex-row max-[710px]:items-center max-[710px]:justify-between max-[710px]:!px-[24px]">
             <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               ROTATION TIME
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
+            <p className=" text-[36px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px] max-[710px]:text-[20px]">
               {location.state.rotation}
             </p>
           </div>
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px] max-[710px]:w-[100%] max-[710px]:h-[48px] max-[710px]:flex-row max-[710px]:items-center max-[710px]:justify-between max-[710px]:!px-[24px]">
             <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               REVOLUTION TIME
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
+            <p className=" text-[36px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px] max-[710px]:text-[20px]">
               {location.state.revolution}
             </p>
           </div>
-          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+          <div className=" flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px] max-[710px]:w-[100%] max-[710px]:h-[48px] max-[710px]:flex-row max-[710px]:items-center max-[710px]:justify-between max-[710px]:!px-[24px]">
             <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               radius
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
+            <p className=" text-[36px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px] max-[710px]:text-[20px]">
               {location.state.radius}
             </p>
           </div>
-          <div className="flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px]">
+          <div className="flex flex-col justify-center !pl-[23px] border-[1px] border-solid border-[#fff] w-[255px] h-[128px] max-[860px]:w-[164px] max-[860px]:h-[88px] max-[860px]:!pl-[15px] max-[710px]:w-[100%] max-[710px]:h-[48px] max-[710px]:flex-row max-[710px]:items-center max-[710px]:justify-between max-[710px]:!px-[24px]">
             <p className=" text-[11px] font-[700] text-[#fff] tracking-[1px] max-[860px]:text-[8px] max-[860px]:leading-[16px] max-[860px]:tracking-[0.7px]">
               AVERAGE TEMP.
             </p>
-            <p className=" text-[40px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px]">
+            <p className=" text-[36px] text-[#fff] font-[400] tracking-[-1.5px] max-[860px]:text-[24px]  max-[860px]:tracking-[-0.9px] max-[710px]:text-[20px]">
               {location.state.temperature}
             </p>
           </div>
