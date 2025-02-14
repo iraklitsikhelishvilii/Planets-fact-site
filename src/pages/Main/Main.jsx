@@ -52,7 +52,7 @@ function Main() {
         visibleclicked={visibleclicked}
         GeoVisible={SetVisible}
       />
-      <div className=" max-w-[1100px] w-[100%] h-[100vh]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[74px]">
+      <div className=" max-w-[1100px] w-[100%] h-[100vh] !px-[10px] max-[860px]:!px-[0px]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[74px]">
         <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between max-[860px]:flex-col">
           <Planet_img_box
             className={"max-[860px]:!ml-[0px] planet_img"}
@@ -73,7 +73,7 @@ function Main() {
               hover_color={"#419EBB"}
               GeoVisible={visible}
               classname={
-                " hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
+                "!duration-[0.6s] ease-in-out hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
               }
             />
           </div>

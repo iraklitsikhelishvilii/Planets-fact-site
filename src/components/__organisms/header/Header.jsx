@@ -59,7 +59,7 @@ function Header() {
             key={key}
             className=" cursor-pointer text-[11px] font-[700] leading-[1px] text-[#fff]"
           >
-            <p className="font_family_spartan opacity-[0.5] hover:opacity-[1]">
+            <p className="font_family_spartan !duration-[0.4s] ease-in-out opacity-[0.5] hover:opacity-[1]">
               {planet.name}
             </p>
           </button>
