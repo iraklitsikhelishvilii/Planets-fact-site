@@ -85,7 +85,7 @@ function Main() {
             <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px] max-[860px]:!mt-[56px] max-[710px]:hidden">
               <button
                 onClick={PlanetClick}
-                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] "
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] "
               >
                 <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]  max-[860px]:text-[9px]  max-[860px]:!ml-[20px]">
                   01
@@ -96,7 +96,7 @@ function Main() {
               </button>
               <button
                 onClick={InternalClick}
-                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
               >
                 <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   02
@@ -107,7 +107,7 @@ function Main() {
               </button>
               <button
                 onClick={SetVisible}
-                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
+                className=" hover:bg-[#419EBB] cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]"
               >
                 <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   03

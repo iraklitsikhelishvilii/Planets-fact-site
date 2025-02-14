@@ -240,7 +240,7 @@ function Planets() {
                 }}
                 onMouseEnter={() => MouseEnter(1)}
                 onMouseLeave={MouseLeave}
-                className={`  cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] `}
+                className={`  cursor-pointer gap-[28px]  flex items-center w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px] `}
               >
                 <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]  max-[860px]:text-[9px]  max-[860px]:!ml-[20px]">
                   01
@@ -256,7 +256,7 @@ function Planets() {
                 }}
                 onMouseEnter={() => MouseEnter(2)}
                 onMouseLeave={MouseLeave}
-                className={` cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]`}
+                className={` cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]`}
               >
                 <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   02
@@ -272,7 +272,7 @@ function Planets() {
                 }}
                 onMouseEnter={() => MouseEnter(3)}
                 onMouseLeave={MouseLeave}
-                className={` cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#fff]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]`}
+                className={` cursor-pointer gap-[28px]  flex items-center  w-[350px] h-[48px] border-[1px] border-solid border-[#ffffff80]  max-[860px]:h-[40px]  max-[860px]:w-[280px] max-[860px]:gap-[17px]`}
               >
                 <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
                   03
