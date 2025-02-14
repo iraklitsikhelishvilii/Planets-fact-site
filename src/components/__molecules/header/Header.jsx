@@ -32,7 +32,7 @@ function Header() {
   };
 
   return (
-    <header className=" !py-[10px] flex items-center justify-between  !px-[32px] w-full  border-b-[1px] border-solid border-[#fff] max-[860px]:flex-col max-[860px]:gap-[39px] max-[860px]:!py-[27px] max-[860px]:!px-[51px] max-[710px]:!py-[14px] max-[710px]:!px-[24px]  max-[710px]:justify-between  max-[710px]:flex-row ">
+    <header className=" !py-[10px] flex items-center justify-between  !px-[32px] w-full  border-b-[1px] border-solid border-[#ffffff80] max-[860px]:flex-col max-[860px]:gap-[39px] max-[860px]:!py-[27px] max-[860px]:!px-[51px] max-[710px]:!py-[14px] max-[710px]:!px-[24px]  max-[710px]:justify-between  max-[710px]:flex-row ">
       <button
         onClick={() => {
           window.location.reload();
@@ -58,13 +58,13 @@ function Header() {
             key={key}
             className=" cursor-pointer text-[11px] font-[700] leading-[1px] text-[#fff]"
           >
-            {planet.name}
+            <p className=" opacity-[0.5] hover:opacity-[1]">{planet.name}</p>
           </button>
         ))}
       </div>
       <div
         className={` transition-all duration-[0.7s] ease z-2 left-0 top-[71px] absolute w-[100%] bg-[#070724] min-[710px]:hidden ${
-          burgermenu ? "h-[100%]" : "h-[0px]"
+          burgermenu ? "h-[950px]" : "h-[0px]"
         }`}
       >
         <div
