@@ -22,7 +22,9 @@ function Button_top_box({
         }
         className={`!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]`}
       >
-        <p className=" opacity-[0.5] hover:opacity-[1]">OVERVIEW</p>
+        <p className="font_family_spartan opacity-[0.5] hover:opacity-[1]">
+          OVERVIEW
+        </p>
       </button>
       <button
         onClick={InternalClick}
@@ -35,7 +37,9 @@ function Button_top_box({
         }
         className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
       >
-        <p className=" opacity-[0.5] hover:opacity-[1]">Structure</p>
+        <p className="font_family_spartan opacity-[0.5] hover:opacity-[1]">
+          Structure
+        </p>
       </button>
       <button
         style={
@@ -48,7 +52,9 @@ function Button_top_box({
         onClick={GeoVisible}
         className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
       >
-        <p className=" opacity-[0.5] hover:opacity-[1]">Surface</p>
+        <p className="font_family_spartan opacity-[0.5] hover:opacity-[1]">
+          Surface
+        </p>
       </button>
     </div>
   );

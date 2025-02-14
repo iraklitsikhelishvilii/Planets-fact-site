@@ -59,7 +59,9 @@ function Header() {
             key={key}
             className=" cursor-pointer text-[11px] font-[700] leading-[1px] text-[#fff]"
           >
-            <p className=" opacity-[0.5] hover:opacity-[1]">{planet.name}</p>
+            <p className="font_family_spartan opacity-[0.5] hover:opacity-[1]">
+              {planet.name}
+            </p>
           </button>
         ))}
       </div>
