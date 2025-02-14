@@ -6,7 +6,7 @@ function Planet_img_box({ className, planetimg, geologuvisible, geology_img }) {
       <img className={className} src={planetimg} alt="" />
       {geologuvisible && (
         <img
-          className=" w-[160px] h-[190px] absolute top-[130px] max-[710px]:w-[110px] max-[710px]:h-[130px] max-[710px]:bottom-[400px]"
+          className=" w-[160px] h-[190px] absolute top-[320px] max-[860px]:top-[200px] max-[710px]:w-[110px] max-[710px]:h-[130px] max-[710px]:top-[130px]"
           src={geology_img}
           alt=""
         />

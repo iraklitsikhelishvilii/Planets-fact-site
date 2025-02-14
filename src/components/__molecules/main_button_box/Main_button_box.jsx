@@ -1,4 +1,5 @@
 import React from "react";
+import Main_btn from "../../__atoms/main_btn/Main_btn";
 
 function Main_button_box({
   InternalClick,
@@ -12,54 +13,39 @@ function Main_button_box({
 }) {
   return (
     <div className="flex flex-col items-center justify-center !mt-[39px] gap-[15px] max-[860px]:!mt-[56px] max-[710px]:hidden ">
-      <button
-        onClick={PlanetClick ? PlanetClick : undefined}
-        style={{
-          backgroundColor: index === 1 ? hover_color : "",
-        }}
-        onMouseEnter={MouseEnter ? () => MouseEnter(1) : undefined}
-        onMouseLeave={MouseLeave ? MouseLeave : undefined}
-        className={classname}
-      >
-        <p className=" !ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5]  max-[860px]:text-[9px]  max-[860px]:!ml-[20px]">
-          01
-        </p>
-        <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px]">
-          OVERVIEW
-        </p>
-      </button>
-      <button
-        onClick={InternalClick ? InternalClick : undefined}
-        style={{
-          backgroundColor: index === 2 ? hover_color : "",
-        }}
-        onMouseEnter={MouseEnter ? () => MouseEnter(2) : undefined}
-        onMouseLeave={MouseLeave ? MouseLeave : undefined}
-        className={classname}
-      >
-        <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
-          02
-        </p>{" "}
-        <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px] ">
-          Internal Structure
-        </p>
-      </button>
-      <button
-        onClick={GeoVisible ? GeoVisible : undefined}
-        style={{
-          backgroundColor: index === 3 ? hover_color : "",
-        }}
-        onMouseEnter={MouseEnter ? () => MouseEnter(3) : undefined}
-        onMouseLeave={MouseLeave ? MouseLeave : undefined}
-        className={classname}
-      >
-        <p className="!ml-[28px] text-[12px] font-[700] text-[#fff] tracking-[2.5px] opacity-[0.5] max-[860px]:text-[9px] max-[860px]:!ml-[20px]">
-          03
-        </p>{" "}
-        <p className="text-[12px] font-[700] text-[#fff] tracking-[2.5px] max-[860px]:text-[9px] ">
-          Surface Geology
-        </p>
-      </button>
+      <Main_btn
+        click={PlanetClick}
+        index={index}
+        hover_color={hover_color}
+        num={1}
+        MouseEnter={MouseEnter}
+        MouseLeave={MouseLeave}
+        classname={classname}
+        num_p={"01"}
+        heading={"OVERVIEW"}
+      />
+      <Main_btn
+        click={InternalClick}
+        index={index}
+        hover_color={hover_color}
+        num={2}
+        MouseEnter={MouseEnter}
+        MouseLeave={MouseLeave}
+        classname={classname}
+        num_p={"02"}
+        heading={"Internal Structure"}
+      />
+      <Main_btn
+        click={GeoVisible}
+        index={index}
+        hover_color={hover_color}
+        num={3}
+        MouseEnter={MouseEnter}
+        MouseLeave={MouseLeave}
+        classname={classname}
+        num_p={"03"}
+        heading={"Surface Geology"}
+      />
     </div>
   );
 }
