@@ -43,7 +43,7 @@ function Main() {
       </div>
       <div className=" max-w-[1100px] w-[100%]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[74px]">
         <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between max-[860px]:flex-col">
-          <div className="  h-[550px] w-[490px] flex justify-center items-center max-[860px]:w-[300px] max-[860px]:h-[auto] max-[710px]:w-[200px]">
+          <div className=" relative  h-[550px] w-[490px] flex justify-center items-center max-[860px]:w-[300px] max-[860px]:h-[auto] max-[710px]:w-[200px]">
             <img
               className=" max-[860px]:!ml-[0px] planet_img"
               src={mercuryimg}
@@ -51,7 +51,7 @@ function Main() {
             />
             {visible && (
               <img
-                className=" w-[160px] h-[190px] absolute  bottom-[250px] max-[710px]:w-[110px] max-[710px]:h-[130px] max-[710px]:bottom-[400px]"
+                className=" w-[160px] h-[190px] absolute  top-[130px] max-[710px]:w-[110px] max-[710px]:h-[130px] max-[710px]:bottom-[400px]"
                 src={Mercury_geology}
                 alt=""
               />
