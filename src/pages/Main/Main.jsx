@@ -52,7 +52,7 @@ function Main() {
         visibleclicked={visibleclicked}
         GeoVisible={SetVisible}
       />
-      <div className=" max-w-[1100px] w-[100%]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[74px]">
+      <div className=" max-w-[1100px] w-[100%] h-[100vh]  flex items-center justify-center flex-col max-[860px]:h-auto max-[860px]:!mt-[98px] max-[710px]:!mt-[74px]">
         <div className=" max-w-[1100px]  w-[100%]  flex items-center justify-between max-[860px]:flex-col">
           <Planet_img_box
             className={"max-[860px]:!ml-[0px] planet_img"}
