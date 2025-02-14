@@ -75,6 +75,8 @@ function Planets() {
       setplanetimg(Neptune_img);
     }
   }, [location.state.name]);
+
+  const [planetclicked, setplanetclicked] = useState(false);
   const PlanetClick = () => {
     if (location.state.name === "Mercury") {
       setplanetimg(Mercury_img);
@@ -94,7 +96,11 @@ function Planets() {
       setplanetimg(Neptune_img);
     }
     setgeologyvisible(false);
+    setplanetclicked(true);
+    setinternalclicked(false);
+    setvisibleclicked(false);
   };
+  const [internalclicked, setinternalclicked] = useState();
   const InternalClick = () => {
     if (location.state.name === "Mercury") {
       setplanetimg(Mercury_internal);
@@ -114,6 +120,9 @@ function Planets() {
       setplanetimg(Neptune_internal);
     }
     setgeologyvisible(false);
+    setplanetclicked(false);
+    setinternalclicked(true);
+    setvisibleclicked(false);
   };
 
   let geology_img;
@@ -136,6 +145,7 @@ function Planets() {
   }
 
   const [geologuvisible, setgeologyvisible] = useState(false);
+  const [visibleclicked, setvisibleclicked] = useState(false);
   const GeoVisible = () => {
     if (location.state.name === "Mercury") {
       setplanetimg(Mercury_img);
@@ -155,40 +165,49 @@ function Planets() {
       setplanetimg(Neptune_img);
     }
     setgeologyvisible(true);
+    setvisibleclicked(true);
+    setinternalclicked(false);
+    setplanetclicked(false);
   };
   return (
     <>
-      <div className=" flex border-b-[1px] border-b-solid border-[#ffffff80] !py-[24px] w-full items-center justify-between !px-[24px] min-[710px]:hidden">
+      <div className=" flex border-b-[1px] border-b-solid border-[#ffffff80]  w-full items-center justify-between !px-[24px] min-[710px]:hidden">
         <button
           onClick={PlanetClick}
-          style={{
-            backgroundColor: index === 1 ? hover_color : "",
-          }}
-          onMouseEnter={() => MouseEnter(1)}
-          onMouseLeave={MouseLeave}
-          className="  cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          style={
+            planetclicked
+              ? {
+                  borderBottom: `4px solid ${hover_color}`,
+                }
+              : {}
+          }
+          className={`!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]`}
         >
           <p className=" opacity-[0.5] hover:opacity-[1]">OVERVIEW</p>
         </button>
         <button
-          style={{
-            backgroundColor: index === 2 ? hover_color : "",
-          }}
-          onMouseEnter={() => MouseEnter(2)}
-          onMouseLeave={MouseLeave}
           onClick={InternalClick}
-          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          style={
+            internalclicked
+              ? {
+                  borderBottom: `4px solid ${hover_color}`,
+                }
+              : {}
+          }
+          className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
         >
           <p className=" opacity-[0.5] hover:opacity-[1]">Structure</p>
         </button>
         <button
-          style={{
-            backgroundColor: index === 3 ? hover_color : "",
-          }}
-          onMouseEnter={() => MouseEnter(3)}
-          onMouseLeave={MouseLeave}
+          style={
+            visibleclicked
+              ? {
+                  borderBottom: `4px solid ${hover_color}`,
+                }
+              : {}
+          }
           onClick={GeoVisible}
-          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
         >
           <p className=" opacity-[0.5] hover:opacity-[1]">Surface</p>
         </button>

@@ -6,37 +6,70 @@ import Mercury_geology from "../../assets/images/geology-mercury.png";
 import { Link } from "react-router";
 function Main() {
   const [mercuryimg, setmercuryimg] = useState(planet_img);
+  const [planetclicked, setplanetclicked] = useState(false);
   const PlanetClick = () => {
     setmercuryimg(planet_img);
     setvisible(false);
+    setplanetclicked(true);
+    setinternalcliked(false);
+    setvisibleclicked(false);
   };
+  const [internalclicked, setinternalcliked] = useState(false);
   const InternalClick = () => {
     setmercuryimg(Mercury_internal);
     setvisible(false);
+    setinternalcliked(true);
+    setplanetclicked(false);
+    setvisibleclicked(false);
   };
+  const [visibleclicked, setvisibleclicked] = useState(false);
   const [visible, setvisible] = useState(false);
   const SetVisible = () => {
     setmercuryimg(planet_img);
     setvisible(true);
+    setvisibleclicked(true);
+    setinternalcliked(false);
+    setplanetclicked(false);
   };
   return (
     <>
-      <div className=" flex border-b-[1px] border-b-solid border-b-[#ffffff80] !py-[24px] w-full items-center justify-between !px-[24px] min-[710px]:hidden">
+      <div className=" flex border-b-[1px] border-b-solid border-b-[#ffffff80]  w-full items-center justify-between !px-[24px] min-[710px]:hidden">
         <button
           onClick={PlanetClick}
-          className=" hover:border-b-[#419EBB] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          style={
+            planetclicked
+              ? {
+                  borderBottom: "4px solid #419EBB",
+                }
+              : {}
+          }
+          className="!py-[24px]  cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
         >
           <p className="opacity-[0.5] hover:opacity-[1]">OVERVIEW</p>
         </button>
         <button
+          style={
+            internalclicked
+              ? {
+                  borderBottom: "4px solid #419EBB",
+                }
+              : {}
+          }
           onClick={InternalClick}
-          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
         >
           <p className="opacity-[0.5] hover:opacity-[1]">Structure</p>
         </button>
         <button
+          style={
+            visibleclicked
+              ? {
+                  borderBottom: "4px solid #419EBB",
+                }
+              : {}
+          }
           onClick={SetVisible}
-          className="cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
+          className="!py-[24px] cursor-pointer text-[9px] text-[#fff] font-[700] leading-[1.9px]"
         >
           <p className="opacity-[0.5] hover:opacity-[1]">Surface</p>{" "}
         </button>
