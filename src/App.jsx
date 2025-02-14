@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Main from "./pages/Main/Main";
 import Planets from "./pages/planets/Planets";
-import Header from "./components/__molecules/header/Header.jsx";
+import Header from "./components/__organisms/header/Header";
 
 function App() {
   return (

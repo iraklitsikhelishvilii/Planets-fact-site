@@ -11,6 +11,7 @@ import Saturn_img from "../../../assets/images/Saturn.svg";
 import Uranus_img from "../../../assets/images/Uranus.svg";
 import Neptune_img from "../../../assets/images/Neptune.svg";
 import arrow_img from "../../../assets/images/Path3.svg";
+import Burger_menu from "../burger_menu/Burger_menu";
 function Header() {
   const navigation = useNavigate();
 
@@ -62,45 +63,13 @@ function Header() {
           </button>
         ))}
       </div>
-      <div
-        className={` transition-all duration-[0.7s] ease z-2 left-0 top-[71px] absolute w-[100%] bg-[#070724] min-[710px]:hidden ${
-          burgermenu ? "h-[950px]" : "h-[0px]"
-        }`}
-      >
-        <div
-          className={`delay-[1s] flex flex-col !pt-[44px] h-[100%] ${
-            burgermenu ? "visible" : "hidden"
-          }`}
-        >
-          {Data.map((planet, key) => {
-            const planetImg = getPlanetImage(planet.name);
-            return (
-              <button
-                onClick={() => {
-                  navigation(`/planets/${planet.name}`, {
-                    state: planet,
-                  });
-                  setburgermenu(false);
-                }}
-                key={key}
-                className="  !mt-[20px] !px-[34px] flex items-center justify-between !py-[20px] border-b-solid border-b-[1px] border-b-[#fff] h-[44px] cursor-pointer text-[15px] font-[700] leading-[1.3px] text-[#fff]"
-              >
-                <div className=" gap-[25px] flex justify-center items-center">
-                  {planetImg && (
-                    <img
-                      className="w-[20px] h-[20px]"
-                      src={planetImg}
-                      alt={planet.name}
-                    />
-                  )}
-                  {planet.name}
-                </div>
-                <img src={arrow_img} alt="" />
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      <Burger_menu
+        burgermenu={burgermenu}
+        getPlanetImage={getPlanetImage}
+        navigation={navigation}
+        setburgermenu={setburgermenu}
+        arrow_img={arrow_img}
+      />
     </header>
   );
 }
